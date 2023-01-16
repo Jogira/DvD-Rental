@@ -15,6 +15,11 @@ namespace Vidly.Controllers
             _context = new ApplicationDbContext();
         }
 
+        public ActionResult New()
+        {
+            return View();
+        }
+
         protected override void Dispose(bool disposing)
         {
             _context.Dispose();

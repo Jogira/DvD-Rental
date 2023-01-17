@@ -1,0 +1,40 @@
+﻿
+@model Vidly.ViewModels.CustomerFormViewModel
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Customer</h2>
+
+@using (Html.BeginForm("Save", "Customers"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.Name)
+        @Html.TextBoxFor(m => m.Customer.Name, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.Birthdate)
+        @*<label for="Birthdate">Date of Birth</label>*@
+        @Html.TextBoxFor(m => m.Customer.Birthdate, "{0:d/MMM/yyyy}", new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.MembershipTypeId)
+        @*<label for="Birthdate">Date of Birth</label>*@
+        @*//First Param is the model you want to choose from. In this case, we're using the CustomerFormViewModel model. Second param is for the value that will be used for the selection.
+            //Third param is the text that actually gets displayed. So since we chose the Name attribute from the CustomerFormViewModel model, it will show all of the different plan names.'*@
+        @Html.DropDownListFor(m => m.Customer.MembershipTypeId, new SelectList(Model.MembershipTypes, "Id", "Name"), "Select Membership Type", new { @class = "form-control" })
+
+    </div>
+    <div class="form-check">
+        <label class="form-check-label" for="flexCheckDefault">
+            @Html.CheckBoxFor(m => m.Customer.IsSubscribedToNewsletter, new { @class = "form-check-input" }) Subscribed to Newsletter?
+        </label>
+    </div>
+
+    @Html.HiddenFor(m => m.Customer.Id)
+
+
+<button type = "submit" class="btn btn-primary">Save</button>
+}

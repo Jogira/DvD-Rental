@@ -10,6 +10,8 @@ using AutoMapper;
 using Vidly.Models;
 using Castle.Core.Resource;
 using Vidly.App_Start;
+using Newtonsoft.Json.Linq;
+using System.Diagnostics;
 
 namespace Vidly.Controllers.Api
 {
@@ -39,24 +41,26 @@ namespace Vidly.Controllers.Api
         }
 
         // GET /api/customers/1
-        public CustomerDto GetCustomer(int id)
+        public IHttpActionResult GetCustomer(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
             if (customer == null)
             {
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                //throw new HttpResponseException(HttpStatusCode.NotFound);
+                return NotFound();
             }
 
-            return iMapper.Map<Customer, CustomerDto>(customer);
+            return Ok(iMapper.Map<Customer, CustomerDto>(customer));
         }
 
         // POST /api/customers
-        [HttpPost]
-        public CustomerDto CreateCustomer(CustomerDto customerDto)
+        //[HttpPost]
+        public IHttpActionResult CreateCustomer(CustomerDto customerDto)
         {
             if (!ModelState.IsValid)
             {
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+                //throw new HttpResponseException(HttpStatusCode.BadRequest);
+                return BadRequest();
             }
 
             var customer = iMapper.Map<CustomerDto, Customer>(customerDto);
@@ -65,11 +69,11 @@ namespace Vidly.Controllers.Api
 
             customerDto.Id = customer.Id;
 
-            return customerDto;
+            return Created(new Uri(Request.RequestUri + "/" + customer.Id), customerDto);
         }
 
         //PUT /api/customers/1
-        [HttpPut]
+        //[HttpPut]
         public void UpdateCustomer(int id, CustomerDto customerDto)
         {
             if (!ModelState.IsValid)

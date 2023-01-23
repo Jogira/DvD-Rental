@@ -54,7 +54,7 @@ namespace Vidly.Controllers.Api
         }
 
         // POST /api/customers
-        //[HttpPost]
+        [HttpPost]
         public IHttpActionResult CreateCustomer(CustomerDto customerDto)
         {
             if (!ModelState.IsValid)
@@ -73,7 +73,7 @@ namespace Vidly.Controllers.Api
         }
 
         //PUT /api/customers/1
-        //[HttpPut]
+        [HttpPut]
         public void UpdateCustomer(int id, CustomerDto customerDto)
         {
             if (!ModelState.IsValid)

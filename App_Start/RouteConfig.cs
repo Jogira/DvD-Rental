@@ -33,7 +33,7 @@ namespace Vidly
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
-                new[] { "AppName.Controllers" }
+                new[] { "Vidly.Controllers" }
 
             );
         }

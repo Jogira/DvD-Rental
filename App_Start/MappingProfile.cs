@@ -15,11 +15,18 @@ namespace Vidly.App_Start
     {
         public MappingProfile()
         {
+            //Domain to DTO.
             CreateMap<Customer, CustomerDto>();
+            //DTO to domain.
             CreateMap<CustomerDto, Customer>();
 
             CreateMap<Movie, MovieDto>();
             CreateMap<MovieDto, Movie>();
+
+            CreateMap<MembershipType, MembershipTypeDto>();
+            CreateMap<MembershipTypeDto, MembershipType>();
+
+
         }
     }
 

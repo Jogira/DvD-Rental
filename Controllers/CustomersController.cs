@@ -45,6 +45,7 @@ namespace Vidly.Controllers
             if (customer.Id == 0)
             {
                 _context.Customers.Add(customer);
+
             }
             else
             {

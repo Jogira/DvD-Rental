@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Xml.Linq;
 using Vidly.Models;
 
 namespace Vidly.ViewModels
@@ -30,6 +29,12 @@ namespace Vidly.ViewModels
         public byte? NumberInStock { get; set; }
 
 
+        [Display(Name = "Number Available")]
+        [Range(1, 20)]
+        [Required]
+        public byte? NumberAvailable { get; set; }
+
+
         public string Title
         {
             get
@@ -49,6 +54,7 @@ namespace Vidly.ViewModels
             Name = movie.Name;
             ReleaseDate = movie.ReleaseDate;
             NumberInStock = movie.NumberInStock;
+            NumberAvailable = movie.NumberInStock;
             GenreId = movie.GenreId;
         }
     }

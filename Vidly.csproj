@@ -327,6 +327,14 @@
     <Compile Include="Migrations\202301310308177_SetNumAvail.designer.cs">
       <DependentUpon>202301310308177_SetNumAvail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202302012014423_AddMoviePosterToMovieModel.cs" />
+    <Compile Include="Migrations\202302012014423_AddMoviePosterToMovieModel.designer.cs">
+      <DependentUpon>202302012014423_AddMoviePosterToMovieModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202302012322031_AddMoviePosterToMovieFormModel.cs" />
+    <Compile Include="Migrations\202302012322031_AddMoviePosterToMovieFormModel.designer.cs">
+      <DependentUpon>202302012322031_AddMoviePosterToMovieFormModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AppRole.cs" />
@@ -760,6 +768,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202301310308177_SetNumAvail.resx">
       <DependentUpon>202301310308177_SetNumAvail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302012014423_AddMoviePosterToMovieModel.resx">
+      <DependentUpon>202302012014423_AddMoviePosterToMovieModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302012322031_AddMoviePosterToMovieFormModel.resx">
+      <DependentUpon>202302012322031_AddMoviePosterToMovieFormModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

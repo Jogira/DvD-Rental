@@ -1,6 +1,8 @@
 ﻿
+using Elmah.ContentSyndication;
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Vidly.Models
 {
@@ -31,5 +33,13 @@ namespace Vidly.Models
         public byte NumberInStock { get; set; }
 
         public byte NumberAvailable { get; set; }
+
+
+        [Column(TypeName = "varbinary")]
+        public Byte[] PosterBinary { get; set; }
+
+        [MaxLength(50)]
+        [Column(TypeName = "varchar")]
+        public string ImagePath { get; set; }
     }
 }

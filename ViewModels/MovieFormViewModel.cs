@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Vidly.Models;
 
 namespace Vidly.ViewModels
@@ -35,6 +36,14 @@ namespace Vidly.ViewModels
         public byte? NumberAvailable { get; set; }
 
 
+        [Column(TypeName = "varbinary")]
+        public Byte[] PosterBinary { get; set; }
+
+        [MaxLength(50)]
+        [Column(TypeName = "varchar")]
+        public string ImagePath { get; set; }
+
+
         public string Title
         {
             get
@@ -56,6 +65,8 @@ namespace Vidly.ViewModels
             NumberInStock = movie.NumberInStock;
             NumberAvailable = movie.NumberInStock;
             GenreId = movie.GenreId;
+            PosterBinary = movie.PosterBinary;
+            ImagePath = movie.ImagePath;
         }
     }
 }

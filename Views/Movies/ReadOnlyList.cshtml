@@ -10,6 +10,7 @@
     <thead>
         <tr>
             <th>Movie</th>
+            <th>Poster</th>
             <th>Genre</th>
         </tr>
     </thead>
@@ -28,6 +29,13 @@
                 columns: [
                     {
                         data: "name",
+                    },
+                    {
+                        data: "ImagePath",
+                        render: function (data, type, movie) {
+                            return "<img src=" + movie.ImagePath + " width ='250' height='25' />";
+                        }
+
                     },
                     {
                         data: "genre.name"

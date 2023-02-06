@@ -335,6 +335,10 @@
     <Compile Include="Migrations\202302012322031_AddMoviePosterToMovieFormModel.designer.cs">
       <DependentUpon>202302012322031_AddMoviePosterToMovieFormModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202302062214469_removedImageBinaryFromModel.cs" />
+    <Compile Include="Migrations\202302062214469_removedImageBinaryFromModel.designer.cs">
+      <DependentUpon>202302062214469_removedImageBinaryFromModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AppRole.cs" />
@@ -687,6 +691,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Data\" />
+    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -774,6 +779,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202302012322031_AddMoviePosterToMovieFormModel.resx">
       <DependentUpon>202302012322031_AddMoviePosterToMovieFormModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302062214469_removedImageBinaryFromModel.resx">
+      <DependentUpon>202302062214469_removedImageBinaryFromModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

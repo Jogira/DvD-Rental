@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Web.Mvc;
 using Vidly.Models;
@@ -99,6 +100,13 @@ namespace Vidly.Controllers
             System.Diagnostics.Debug.WriteLine($"Object: {movie.Name} {movie.Id}");
             System.Diagnostics.Debug.WriteLine($"Object: {movie}");
 
+            string FileName = Path.GetFileNameWithoutExtension(movie.ImageFile.FileName);
+            string Extension = Path.GetExtension(movie.ImageFile.FileName);
+            FileName = FileName + DateTime.Now.ToString("yymmssfff") + Extension;
+            movie.ImagePath = "~/Images/" + FileName;
+            FileName = Path.Combine(Server.MapPath("~/Images/"), FileName);
+            movie.ImageFile.SaveAs(FileName);
+
             if (!ModelState.IsValid)
             {
                 var viewModel = new MovieFormViewModel(movie)
@@ -122,9 +130,12 @@ namespace Vidly.Controllers
                 movieInDb.GenreId = movie.GenreId;
                 movieInDb.NumberInStock = movie.NumberInStock;
                 movieInDb.ReleaseDate = movie.ReleaseDate;
+                //movieInDb.PosterBinary = movie.PosterBinary;
+                movieInDb.ImagePath = movie.ImagePath;
             }
 
              _context.SaveChanges();
+            ModelState.Clear();
 
             return RedirectToAction("Index", "Movies");
         }

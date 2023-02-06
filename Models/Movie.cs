@@ -3,6 +3,8 @@ using Elmah.ContentSyndication;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Web;
+
 
 namespace Vidly.Models
 {
@@ -35,11 +37,20 @@ namespace Vidly.Models
         public byte NumberAvailable { get; set; }
 
 
-        [Column(TypeName = "varbinary")]
-        public Byte[] PosterBinary { get; set; }
+        //[Column(TypeName = "varbinary")]
+        //public Byte[] PosterBinary { get; set; }
 
         [MaxLength(50)]
         [Column(TypeName = "varchar")]
         public string ImagePath { get; set; }
+
+        public int ImageId { get; set; }
+
+        public string ImageName { get; set; }
+
+        [NotMapped]
+        [Display(Name = "Upload Movie Cover")]
+        public HttpPostedFileBase ImageFile { get; set; }
+
     }
 }

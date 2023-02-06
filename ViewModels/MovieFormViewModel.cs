@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Reflection;
+using System.Web;
 using Vidly.Models;
 
 namespace Vidly.ViewModels
@@ -36,12 +38,19 @@ namespace Vidly.ViewModels
         public byte? NumberAvailable { get; set; }
 
 
-        [Column(TypeName = "varbinary")]
-        public Byte[] PosterBinary { get; set; }
+        //[Column(TypeName = "varbinary")]
+        //public Byte[] PosterBinary { get; set; }
 
         [MaxLength(50)]
         [Column(TypeName = "varchar")]
         public string ImagePath { get; set; }
+        public int ImageId { get; set; }
+
+        public string ImageName { get; set; }
+
+        [NotMapped]
+        [Display(Name = "Upload Movie Cover")]
+        public HttpPostedFileBase ImageFile { get; set; }
 
 
         public string Title
@@ -65,8 +74,11 @@ namespace Vidly.ViewModels
             NumberInStock = movie.NumberInStock;
             NumberAvailable = movie.NumberInStock;
             GenreId = movie.GenreId;
-            PosterBinary = movie.PosterBinary;
+            //PosterBinary = movie.PosterBinary;
             ImagePath = movie.ImagePath;
+            ImageFile = movie.ImageFile;
+            ImageName = movie.ImageName;
+            ImageId = movie.ImageId;
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 using System.Xml.Linq;
@@ -24,5 +25,18 @@ namespace Vidly.Dtos
 
         [Range(1, 20)]
         public byte NumberInStock { get; set; }
+
+
+        [MaxLength(50)]
+        [Column(TypeName = "varchar")]
+        public string ImagePath { get; set; }
+
+        public int ImageId { get; set; }
+
+        public string ImageName { get; set; }
+
+        [NotMapped]
+        [Display(Name = "Upload Movie Cover")]
+        public HttpPostedFileBase ImageFile { get; set; }
     }
 }

@@ -103,8 +103,8 @@ namespace Vidly.Controllers
             string FileName = Path.GetFileNameWithoutExtension(movie.ImageFile.FileName);
             string Extension = Path.GetExtension(movie.ImageFile.FileName);
             FileName = FileName + DateTime.Now.ToString("yymmssfff") + Extension;
-            movie.ImagePath = "~/Images/" + FileName;
-            FileName = Path.Combine(Server.MapPath("~/Images/"), FileName);
+            movie.ImagePath = "/Images/" + FileName;
+            FileName = Path.Combine(Server.MapPath("/Images/"), FileName);
             movie.ImageFile.SaveAs(FileName);
 
             if (!ModelState.IsValid)

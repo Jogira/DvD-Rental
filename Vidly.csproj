@@ -339,6 +339,14 @@
     <Compile Include="Migrations\202302062214469_removedImageBinaryFromModel.designer.cs">
       <DependentUpon>202302062214469_removedImageBinaryFromModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202302072314465_changeEmail.cs" />
+    <Compile Include="Migrations\202302072314465_changeEmail.designer.cs">
+      <DependentUpon>202302072314465_changeEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202302072321071_changeName.cs" />
+    <Compile Include="Migrations\202302072321071_changeName.designer.cs">
+      <DependentUpon>202302072321071_changeName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AppRole.cs" />
@@ -782,6 +790,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202302062214469_removedImageBinaryFromModel.resx">
       <DependentUpon>202302062214469_removedImageBinaryFromModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302072314465_changeEmail.resx">
+      <DependentUpon>202302072314465_changeEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302072321071_changeName.resx">
+      <DependentUpon>202302072321071_changeName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

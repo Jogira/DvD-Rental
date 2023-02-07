@@ -27,7 +27,7 @@
         </div>
     </div>
 
-    <button class="btn btn-primary">Submit</button>
+    <button class="btn btn-success">Submit</button>
 </form>
 @section scripts
 {
@@ -121,27 +121,6 @@
                     return false;
                 }
             });
-
-            $('#movie').typeahead({
-                minLength: 3,
-                highlight: true
-            }, {
-                name: 'movies',
-                display: 'name',
-                source: movies
-            }).on("typeahead:select", function (e, movie) {
-                $("#movies").append("<li class='list-group-item'>" + movie.name + "</li>");
-
-                $("#movie").typeahead("val", "");
-
-                vm.movieIds.push(movie.id);
-            });
-
-
-
-
-
-            
         });
     </script>
 }

@@ -43,3 +43,55 @@ input.error{
     color: darkred;
 }
 
+img{
+    max-height: 250px;
+    max-width: 250px;
+    border-radius: 5px;
+}
+
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "Franklin Gothic Medium";
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+body {
+    font-family: "Century Gothic";
+    font-size: 16px;
+    line-height: 1.428571429;
+    color: #333333;
+    background-color: #5CDB95;
+}
+
+.navbar-inverse {
+    background-color: #05386B;
+}
+
+a {
+    font-weight: bold;
+}
+
+.btn {
+    border-radius: 20px;
+}
+.btn-success {
+    background-color: #05386B;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #EDF5E1;
+}
+
+.navbar-inverse:hover .navbar-brand:hover {
+    color: #000000;
+}
+
+.table-hover > tbody > tr:hover > td, .table-hover > tbody > tr:hover > th {
+    background-color: #8EE4AF;
+}
+
+.table {
+    background-color: #b0aeff87;
+    border-radius: 20px;
+}

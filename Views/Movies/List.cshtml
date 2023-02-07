@@ -5,9 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
 <h2>Movies</h2>
 <p>
-    @Html.ActionLink("New Movie", "New", "Movies", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink("New Movie", "New", "Movies", null, new { @class = "btn btn-success" })
 </p>
 <table id="movies" class="table table-bordered table-hover">
     <thead>
@@ -15,7 +16,7 @@
             <th>Movie</th>
             <th>Genre</th>
             <th>Poster</th>
-            <th>Delete</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -30,6 +31,14 @@
                     url: "/api/movies",
                     dataSrc: ""
                 },
+
+                columnDefs: [
+                    { orderable: false, targets: [-1, -2]}
+                ],
+                lengthMenu: [
+                    [3, 6, 9, -1],
+                    [3, 6, 9, 'All'],
+                ],
                 columns: [
                     {
                         data: "name",
@@ -42,17 +51,25 @@
                     },
                     {
                         data: "ImagePath",
+                        "className" : "text-center",
                         render: function (data, type, movie) {
-                            return "<img src="+ movie.ImagePath + " width ='250' height='25' />";
+                            //return "<p>" + movie.imagePath; 
+                           
+                            return "<img src='" + movie.imagePath + "' />";
+
                         }
 
                     },
                     {
                         data: "id",
-                        render: function(data) {
-                                        return "<button class='btn-link js-delete' data-movie-id=" + data + ">Delete</button>";
-                                    }
-                                }
+                        "className": "text-center",
+
+                        render: function (data)
+                        {
+                            return "<a class='js-delete btn btn-danger' data-movie-id=" + data + ">Delete</button>";
+                         }
+                    },
+
                 ]
             });
 

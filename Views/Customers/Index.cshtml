@@ -20,7 +20,9 @@
     {
         <p>We don't have any customers yet.</p>
     }*@
-
+<p>
+    @Html.ActionLink("New Customer", "New", "Customers", null, new { @class = "btn btn-success" })
+</p>
 
 <table id="customers" class="table table-bordered table-hover">
     <thead>
@@ -70,7 +72,7 @@
                         {
                             data: "id",
                             render: function (data) {
-                                return "<button class='btn-link js-delete' data-customer-id=" + data + ">Delete</button>"
+                                return "<a class='js-delete btn btn-danger' js-delete' data-customer-id=" + data + ">Delete</button>"
                             }
                         }
                     ]

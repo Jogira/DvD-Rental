@@ -9,9 +9,9 @@
 <table id="movies" class="table table-bordered table-hover">
     <thead>
         <tr>
+            <th>Genre</th>
             <th>Movie</th>
             <th>Poster</th>
-            <th>Genre</th>
         </tr>
     </thead>
     <tbody>
@@ -26,19 +26,29 @@
                     url: "/api/movies",
                     dataSrc: ""
                 },
+
+                columnDefs: [
+                    { orderable: false, targets: [-1, -2] }
+                ],
+                lengthMenu: [
+                    [3, 6, 9, -1],
+                    [3, 6, 9, 'All'],
+                ],
                 columns: [
                     {
                         data: "name",
                     },
-                    {
-                        data: "ImagePath",
-                        render: function (data, type, movie) {
-                            return "<img src='" + movie.imagePath + "' width ='25' height='250' />";
-                        }
 
-                    },
                     {
                         data: "genre.name"
+                    },
+                    {
+                        data: "ImagePath",
+                        "className": "text-center",
+                        render: function (data, type, movie) {
+                            return "<img src='" + movie.imagePath + "' />";
+                        }
+
                     }
                 ]
             });

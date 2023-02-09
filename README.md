@@ -19,7 +19,7 @@ Movies can deleted by admins. If not logged in as an admin, this option is remov
 ![Deleteing a movie](https://github.com/Jogira/DvD-Rental/blob/master/Images/Deleting%20Movie.gif?raw=true)
 (A view of the same page, but logged in as a normal user.)
 ![image](https://user-images.githubusercontent.com/46968282/217675609-1c7778aa-5808-4550-8243-a744bd4de6a1.png)
-Movies can also be edited. Here, I change the genre of Pool Room from Thriller to Sci-Fi and it updates realtime.
+Movies can also be edited. Here I changed the genre of Pool Room from Thriller to Sci-Fi and it updates realtime. The datatables plugin was also used to format the movies into a more presentable format, along with adding pagination, ordering, and search functionality. 
 ![Editing a movie](https://github.com/Jogira/DvD-Rental/blob/master/Images/Editing%20Movie.gif?raw=true)
 
 ## Other Site Pages
